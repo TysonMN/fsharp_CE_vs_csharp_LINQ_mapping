@@ -1,4 +1,4 @@
-module MonadMoudle
+module MonadModule
 
 open System.Runtime.CompilerServices
 open System

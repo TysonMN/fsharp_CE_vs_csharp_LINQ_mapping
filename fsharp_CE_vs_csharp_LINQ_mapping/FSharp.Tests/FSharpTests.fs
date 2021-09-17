@@ -1,7 +1,7 @@
 module Tests
 
 open Xunit
-open MonadMoudle
+open MonadModule
 
 
 let assertions c =

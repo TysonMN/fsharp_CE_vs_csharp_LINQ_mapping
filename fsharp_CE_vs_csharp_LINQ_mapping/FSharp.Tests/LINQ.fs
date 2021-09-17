@@ -2,7 +2,7 @@
 
 open System
 open System.Runtime.CompilerServices
-open MonadMoudle
+open MonadModule
 
 
 type MonadClass private () =
