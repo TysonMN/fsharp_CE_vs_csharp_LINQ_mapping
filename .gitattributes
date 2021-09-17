@@ -1,0 +1,24 @@
+# https://git-scm.com/docs/gitattributes
+
+# The purpose of this file is to configure git's management of end-of-line characters.
+# Helpful post that explains why this file is needed.
+# https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+
+# By default, allow git to guess if a file is text or binary
+* text=auto
+
+# In case git guesses wrong, explicity specify text or binary for files with these extensions
+*.config        text
+*.cs            text
+*.csproj        text
+*.editorconfig  text
+*.fs            text
+*.fsproj        text
+*.gitattributes text
+*.gitignore     text
+*.json          text
+*.sln           text
+*.xaml          text
+*.yml           text
+
+*.dll binary
