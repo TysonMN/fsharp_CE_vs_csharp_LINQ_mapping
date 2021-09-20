@@ -30,6 +30,9 @@ type Builder internal () =
   member __.Return(a: 'a) : Monad<'a> =
     Monad a
 
+  member __.BindReturn(m, f) =
+    Monad.map f m
+
   member __.ReturnFrom(m: Monad<'a>) : Monad<'a> =
     m
 
