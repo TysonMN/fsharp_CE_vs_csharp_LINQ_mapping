@@ -24,6 +24,6 @@ let FSharp_CE () =
     monad {
       let! a = Monad.ma
       let! b = Monad.mb
-      return a + b
+      a + b
     }
   assertions c

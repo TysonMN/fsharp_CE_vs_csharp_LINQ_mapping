@@ -27,15 +27,16 @@ type Builder internal () =
   member __.Bind(m: Monad<'a>, f: 'a -> Monad<'b>) : Monad<'b> =
     m |> Monad.bind f
 
-  member __.Return(a: 'a) : Monad<'a> =
+  member __.Yield(a: 'a) : Monad<'a> =
     Monad a
 
-  member __.BindReturn(m, f) =
-    Monad.map f m
-
-  member __.ReturnFrom(m: Monad<'a>) : Monad<'a> =
+  member __.Combine(_: Monad<unit>, m: Monad<'a>) : Monad<'a> =
     m
 
+  member __.Delay(f : unit -> Monad<'a>) : Monad<'a> =
+    f ()
+
+  // Zero isn't needed, but the IntelliSense compiler gives an error without it
   member __.Zero() : Monad<unit> =
     Monad ()
 
